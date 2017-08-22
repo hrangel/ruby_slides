@@ -53,7 +53,7 @@
             <a:tbl>
               <a:tblPr/>
               <a:tblGrid>
-                <% content.count.times do %>
+                <% content.map { |row| row.count }.max.times do %>
                   <a:gridCol w="1268640"/>
                 <% end %>
               </a:tblGrid>
