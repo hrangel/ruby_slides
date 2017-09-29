@@ -50,10 +50,11 @@ module RubySlides
                                               content: content)
     end
 
-    def chart_slide(title, series = [{}])
+    def chart_slide(title, series = [{}], chart_title = nil)
       @slides << RubySlides::Slide::Chart.new(presentation: self,
                                               title: title,
-                                              series: series)
+                                              series: series,
+                                              chart_title: chart_title)
     end
 
     def save(path)

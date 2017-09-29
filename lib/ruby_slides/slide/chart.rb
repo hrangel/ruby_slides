@@ -6,11 +6,14 @@ module RubySlides
     class Chart
       include RubySlides::Util
 
-      attr_reader :title, :series
+      attr_reader :title, :series, :chart_title
 
       def initialize(options={})
         require_arguments [:title, :series], options
         options.each {|k, v| instance_variable_set("@#{k}", v)}
+        series.each do |ser|
+          ser[:color] = ("%06x" % (rand * 0xffffff)) if !ser[:color]
+        end
       end
 
       def save(extract_path, index)
