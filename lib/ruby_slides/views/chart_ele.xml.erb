@@ -12,6 +12,7 @@
     </mc:Fallback>
   </mc:AlternateContent>
   <c:chart>
+    <% if chart_title && chart_title.length > 0 %>
     <c:title>
       <c:layout />
       <c:overlay val="0" />
@@ -44,6 +45,9 @@
       </c:txPr>
     </c:title>
     <c:autoTitleDeleted val="0" />
+    <% else %>
+    <c:autoTitleDeleted val="1" />
+    <% end %>
     <c:plotArea>
       <c:layout />
       <c:barChart>
